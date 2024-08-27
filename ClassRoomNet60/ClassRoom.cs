@@ -30,7 +30,7 @@ namespace ClassRoomNet60
             //foreach (Student student in StudentList)
             //{
             //    string season = student.Season();
-            //    if (seasonAmounts.ContainsKey(season) && season != "Invalid")
+            //    if (seasonAmounts.ContainsKey(season))
             //    {
             //        seasonAmounts[season]++;
             //    }
