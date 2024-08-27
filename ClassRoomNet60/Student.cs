@@ -11,14 +11,48 @@ namespace ClassRoomNet60
         public Student(string name, int birthMonth, int birthDay)
         {
             Name = name;
-            BirthMonth = birthMonth;
+            if (IsBirthMonthLegit(birthMonth))
+            {
+                BirthMonth = birthMonth;
+            }
+            else
+            {
+                throw new ArgumentException("Kan ikke indtaste invalid fødselsmåled");
+            }
+            
             BirthDay = birthDay;
         }
         public string Name { get; private set; }
 
-        public int BirthMonth { get; private set; }
+        private int _birthMonth;
+
+        public int BirthMonth
+        {
+            get { return _birthMonth; }
+            private set 
+            {
+
+                if (IsBirthMonthLegit(value))
+                {
+                    _birthMonth = value;
+                }
+            }
+        }
+
 
         public int BirthDay { get; private set; }
+
+        private bool IsBirthMonthLegit(int birthMonth)
+        {
+            if (birthMonth < 13 && birthMonth > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public string Season()
         {
@@ -40,7 +74,7 @@ namespace ClassRoomNet60
         public override string ToString()
         {
             return $"\tStudent name: {Name}\n" +
-                   $"\tBirth Date: {BirthMonth}/{BirthDay}\n";
+                   $"\t\tBirth Date: {BirthMonth}/{BirthDay}\n";
 
         }
     }

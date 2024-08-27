@@ -34,7 +34,7 @@ namespace ClassRoomNet60
             //    {
             //        seasonAmounts[season]++;
             //    }
-
+                
             //}
             // LINQ version
             StudentList.ForEach(student =>

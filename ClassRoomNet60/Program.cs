@@ -13,3 +13,5 @@ Console.WriteLine(classRoom.ToString());
 
 classRoom.PrintStudentSeasons();
 
+//Student s = new Student("", 0, 1);
+
