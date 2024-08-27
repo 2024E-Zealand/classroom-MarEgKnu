@@ -26,14 +26,25 @@ namespace ClassRoomNet60
             seasonAmounts.Add("Winter", 0);
             seasonAmounts.Add("Spring", 0);
             seasonAmounts.Add("Autumn", 0);
-            foreach (Student student in StudentList)
-            {
-                string season = student.Season();
-                if (seasonAmounts.ContainsKey(season) && season != "Invalid")
+            // LOOP version
+            //foreach (Student student in StudentList)
+            //{
+            //    string season = student.Season();
+            //    if (seasonAmounts.ContainsKey(season) && season != "Invalid")
+            //    {
+            //        seasonAmounts[season]++;
+            //    }
+
+            //}
+            // LINQ version
+            StudentList.ForEach(student =>
                 {
-                    seasonAmounts[season]++;
-                }
-            }
+                    string season = student.Season();
+                    if (seasonAmounts.ContainsKey(season) && season != "Invalid")
+                    {
+                        seasonAmounts[season]++;
+                    }
+                });
             foreach (var seasonAmount in seasonAmounts)
             {
                 Console.WriteLine($"Birthdays in {seasonAmount.Key}: {seasonAmount.Value}");
