@@ -9,3 +9,5 @@ ClassRoom classRoom = new ClassRoom()
 { new Student("Marius", 12, 5), new Student("Jakob", 3, 10) }
 };
 
+Console.WriteLine(classRoom.ToString());   
+
