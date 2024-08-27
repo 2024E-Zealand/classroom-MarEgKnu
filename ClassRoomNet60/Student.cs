@@ -17,7 +17,7 @@ namespace ClassRoomNet60
             }
             else
             {
-                throw new ArgumentException("Kan ikke indtaste invalid fødselsmåled");
+                throw new ArgumentException("Kan ikke indtaste fødselsdato under 1 eller over 12");
             }
             
             BirthDay = birthDay;
@@ -67,7 +67,7 @@ namespace ClassRoomNet60
                 case 9 or 10 or 11:
                     return "Autumn";
                 default:
-                    return "Invalid";
+                    throw new ArgumentException("Kan ikke have fødselsdato under 1 eller over 12, fix it asap");
             }
         }
 

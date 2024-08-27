@@ -40,7 +40,7 @@ namespace ClassRoomNet60
             StudentList.ForEach(student =>
                 {
                     string season = student.Season();
-                    if (seasonAmounts.ContainsKey(season) && season != "Invalid")
+                    if (seasonAmounts.ContainsKey(season))
                     {
                         seasonAmounts[season]++;
                     }
