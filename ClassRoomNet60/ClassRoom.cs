@@ -12,10 +12,10 @@ namespace ClassRoomNet60
         {
             
         }
-        public string ClassName { get; private set; }
+        public string ClassName { get; set; }
 
-        public List<Student> StudentList { get; private set; }
+        public List<Student> StudentList { get; set; }
 
-        public DateTime SemesterStart { get; private set; }
+        public DateTime SemesterStart { get; set; }
     }
 }
