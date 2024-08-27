@@ -18,6 +18,28 @@ namespace ClassRoomNet60
 
         public DateTime SemesterStart { get; set; }
 
+
+        public void PrintStudentSeasons()
+        {
+            Dictionary<string, int> seasonAmounts = new Dictionary<string, int>();
+            seasonAmounts.Add("Summer", 0);
+            seasonAmounts.Add("Winter", 0);
+            seasonAmounts.Add("Spring", 0);
+            seasonAmounts.Add("Autumn", 0);
+            foreach (Student student in StudentList)
+            {
+                string season = student.Season();
+                if (seasonAmounts.ContainsKey(season) && season != "Invalid")
+                {
+                    seasonAmounts[season]++;
+                }
+            }
+            foreach (var seasonAmount in seasonAmounts)
+            {
+                Console.WriteLine($"Birthdays in {seasonAmount.Key}: {seasonAmount.Value}");
+            }
+            
+        }
         public override string ToString()
         {
             string result = $"Class Name: {ClassName}\n" +
